@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architectural Journals</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <style>
+      :root {
+        --ion-safe-area-top: 20px;
+        --ion-safe-area-bottom: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app>
+      <ion-nav root="nav-home"></ion-nav>
+    </ion-app>
+
+    <script>
+      techs = [
+      {
+          short: 'ACEE',
+          title: 'Architecture, Civil Engineering, Environment',
+          front: 'https://www.exeley.com/exeley/journals/architecture_civil_engineering_environment/exeley-architecture_civil_engineering_environment.jpg',
+          logo: 'http://www.acee-journal.pl/img/logo.gif',
+          description:'The aim of the journal is to bridge the gap between these three domains of knowledge, and to offer the common possibility of publishing current results of research work and efforts in innovations. It is a quarterly journal, fully in English, with the papers available on website. It is an open access journal, both publication and downloading the published articles is free of charge (neither submission charges, nor article processing fee are charged).',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'IMRaC',
+          words: 'No. of words: not-described',
+          link: 'http://www.acee-journal.pl/1,5,GUIDE_TO_AUTHORS.html',
+        },
+      {
+          short: 'AMPS',
+          title: 'ArchitectureMPS',
+          front: 'https://i1.wp.com/architecturemps.com/wp-content/uploads/2021/04/5-Journal_v1c.jpg?resize=768%2C367&ssl=1',
+          logo: 'https://i1.wp.com/architecturemps.com/wp-content/uploads/2021/04/5-Journal_v1c.jpg?resize=768%2C367&ssl=1',
+          description:'AMPS is an academic initiative that sees the definition, debates and concerns of the built environment as intrinsic to those at the heart of other social, cultural and political discourses. The territory it seeks to explore is an overlaid terrain in which the physical, material and the environmental are critically examined through the prism of the cultural, the mediatic, the social and the political.Its focus is cross disciplinary and draws on the media, politics and the social sciences to better understand the built environment. It facilities participation across sectors: architects, planners, policy makers, artists, academics, the public and community activists. It functions as an open access platform for publication, a forum for debate through conferences and workshops, and until 2019 also operated as an academic resource repository run by information professionals.Its aims are to facilitate a better understanding of the role of architecture and the built environment on communities, public health and society more broadly;  to engage academics with other public stakeholders in questions of the built environment; and to support in the provision of relevant accessible materials to academics and the broader public including video presentations, written articles, research guides, books, and event listings.',
+          index: 'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'free-format',
+          words: '5,000-7,000 words',
+          link: 'https://architecturemps.com/author-guidelines/',
+        },
+        {
+          short: 'Arch. Hist.- Cambridge Journal',
+          title: 'Architectural History - SAHGB - Cambridge Journal',
+          front: 'https://static.cambridge.org/covers/ARH_0_0_0/architectural_history.jpg',
+          logo: 'https://static.cambridge.org/covers/ARH_0_0_0/architectural_history.jpg',
+          description:' Architectural History is a double-blind, peer-reviewed international journal that publishes significant original and interpretive research on buildings, the built environment, the history of architectural theory, and architectural historiography, in all places and periods. Articles in Architectural History are intended to be rigorous, analytical, and, although closely focused, also contextualize their subject and explore its relevance in relation to wider issues concerning the history and understanding of architecture.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: 'APC',
+          noapc: '',
+          format: 'Format: Not-described',
+          words: '6,000-12,000 words',
+          link: 'https://www.cambridge.org/core/journals/architectural-history/information/instructions-contributors',
+        },
+        {
+          short: 'Architectural Histories - EAHN',
+          title: 'Architectural Histories - EAHN',
+          front: 'https://journal.eahn.org/media/cover_images/b8f46bfb-a554-418d-909d-4c2da9044a15.jpg',
+          logo: 'https://journal.eahn.org/media/cover_images/b8f46bfb-a554-418d-909d-4c2da9044a15.jpg',
+          description:'Architectural Histories is the international, blind peer-reviewed scholarly journal of the EAHN - European Architectural History Network that creates a space where historically grounded research into all aspects of architecture and the built environment can be made public, consulted, and discussed. The journal is open to historical, historiographic, theoretical, and critical contributions that engage with architecture and the built environment from a historical perspective.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'Scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: 'APC',
+          noapc: '',
+          format: 'IMRaD',
+          words: '7,000 words',
+          link: 'https://journal.eahn.org/site/author-guidelines/',
+        },
+        {
+          short: 'arq - Cambridge Journal',
+          title: 'arq: Architectural Research Quarterly - Cambridge Journal',
+          front: 'https://static.cambridge.org/covers/ARQ_0_0_0/arq:_architectural%20research%20quarterly.jpg',
+          logo: 'https://static.cambridge.org/covers/ARQ_0_0_0/arq:_architectural%20research%20quarterly.jpg',
+          description:'arq publishes cutting-edge work covering all aspects of architectural endeavour. Contents include building design, urbanism, history, theory, environmental design, construction, materials, information technology, and practice. Other features include interviews, occasional reports, lively letters pages, book reviews and an end feature, Insight. Reviews of significant buildings are published at length and in a detail matched today by few other architectural journals. Elegantly designed, inspirational and often provocative, arq is essential reading for practitioners in industry and consultancy as well as for academic researchers.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: 'APC',
+          noapc: '',
+          format: 'Format: Not-described',
+          words: '4,500 and 6,500 words',
+          link: 'https://www.cambridge.org/core/journals/arq-architectural-research-quarterly/information/instructions-contributors',
+        },
+        {
+          short: 'ArchiStor',
+          title: 'ArchiStor',
+          front: 'http://pkp.unirc.it/ojs/public/journals/2/cover_issue_54_it_IT.jpg',
+          logo: 'data:image/jpeg;base64,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',
+          description:'The ArcHistoR open access journal publishes scholarly essays based on original and interpretative research in the fields of architectural theory, history and historiography, as well as analyses of theoretical, critical and project aspects of restoration, without limitations of place or period. Particular attention is paid to the artistic and cultural contextualization of each specialist subject, in relation to more general issues concerning the history, understanding and restoration of architecture. The journal originated in the CROSS Laboratory History of Architecture and Restoration, at the Department PAU of the Mediterranea University of Reggio Calabria, whose activity concerns the study of architecture, the built environment and territory in the widest interdisciplinary sense, from ancient to contemporary, with particular focus on the Mediterranean area.',
+          index: 'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'free-format',
+          words: 'No. of words: not described',
+          link: 'http://pkp.unirc.it/ojs/index.php/archistor/about/editorialPolicies#focusAndScope',
+        },
+        {
+          short: 'Architectural Science Review',
+          title: 'Architectural Science Review - T&FG',
+          front: 'https://m1computing.files.wordpress.com/2014/06/architectural-science-review.jpg',
+          logo: 'https://m1computing.files.wordpress.com/2014/06/architectural-science-review.jpg',
+          description:'Publishes papers on architectural science, technology and the built environment, covering topics like thermal comfort, lighting and sustainable architecture. Architectural Science Review publishes original research papers, shorter research notes, and abstracts of PhD dissertations and theses in all areas of architectural science including: building science and technology, environmental sustainability, structures and materials, audio and acoustics, illumination, thermal systems, building physics, building services, building climatology, building economics, ergonomics, history and theory of architectural science and the social sciences of architecture.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: 'APC',
+          noapc: '',
+          format: 'IMRaD',
+          words: 'No. of words: not-described',
+          link: 'https://www.tandfonline.com/action/authorSubmission?show=instructions&journalCode=tasr20',
+        },
+        {
+          short: 'Building - MDPI',
+          title: 'Building - MDPI',
+          front: 'https://www.mdpi.com/img/journals/buildings-logo.png?0cdd89f7a6ea7cc6',
+          logo: 'https://www.mdpi.com/img/journals/buildings-logo.png?0cdd89f7a6ea7cc6',
+          description:' Buildings (ISSN 2075-5309) is an international, peer-reviewed, open access journal (free for readers) that publishes original articles, critical reviews, research notes, and communications on building science, building engineering and architecture design. There is no restriction on the length of the papers as we encourage researchers to publish their innovative ideas and results in as much detail as possible. Additionally, we encourage authors to publish related electronic files or software along with their publication as “Supplementary Material”. To guarantee a rapid refereeing and editorial process, Buildings follows standard publication practices in the natural sciences..',
+          index:'Scopus',
+          indexlogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          scopus:'',
+          apc: 'APC',
+          noapc: '',
+          format: 'IMRaD',
+          words: 'No. of words: not-described',
+          link: 'https://www.mdpi.com/journal/buildings/instructions',
+        },
+        
+        {
+          short: 'DISEGNARECON',
+          title: 'DISEGNARECON',
+          front: 'http://disegnarecon.univaq.it/ojs/public/journals/1/cover_issue_30_en_US.jpg',
+          logo: 'http://disegnarecon.univaq.it/ojs/public/journals/1/homeHeaderTitleImage_en_US.jpg',
+          description:'"DISEGNARECON” is an international, on-line, diamond open access and blind peer reviewed scientific journal focused on researches and case studies in the different fields of cultural heritage, and in particular of built heritage design, representation, communication, and valorization, in relation to the multiple tangible and intangible dimensions. DISEGNARECON is a wording made by two different Italian polysemantic words: "disegnare" (means "drawing" but also "design") + "con" ("with" or "through"). The journal invites submissions and aims to favor the discussion and debate between scholars.',
+          index: 'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'free-format',
+          words: '35.000 characters',
+          link: 'http://disegnarecon.univaq.it/ojs/index.php/disegnarecon',
+        },
+
+        {
+          short: 'ECAM - Emerald',
+          title: 'Engineering, Construction and Architectural Management',
+          front: 'https://www.emerald.com/insight/proxy/containerImg?link=/resource/publication/journal/b9d5b459dd295715c85b6964fd6a7035/urn:emeraldgroup.com:asset:id:binary:ecam.cover.jpg',
+          logo: 'https://www.emerald.com/insight/proxy/containerImg?link=/resource/publication/journal/b9d5b459dd295715c85b6964fd6a7035/urn:emeraldgroup.com:asset:id:binary:ecam.cover.jpg',
+          description:'ECAM publishes original peer-reviewed research papers, case studies, technical notes, book reviews, features, discussions and other contemporary articles that advance research and practice in engineering, construction and architectural management. In particular, ECAM seeks to advance integrated design and construction practices, project lifecycle management, and sustainable construction. The journal’s scope covers all aspects of architectural design, design management, construction/project management, engineering management of major infrastructure projects, and the operation and management of constructed facilities. ECAM also addresses the technological, process, economic/business, environmental/sustainability, political, and social/human developments that influence the construction project delivery process.',
+          index: 'Emerald',
+          indexlogo: 'data:image/jpeg;base64,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',
+          scopus:'',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'IMRaD',
+          words: '6,000 - 8,000 words',
+          link: 'https://www.emeraldgrouppublishing.com/journal/ecam?distinct_id=17efa29e3a928-0b777cdd10e90e-6e23724e-100200-17efa29e3aa30c&_ga=2.62370735.2016625083.1644874556-365364626.1644874555#author-guidelines',
+        },
+
+        {
+          short: 'Frontiers of architectural research',
+          title: 'Frontiers of architectural research',
+          front: 'https://ars.els-cdn.com/content/image/X20952635.jpg',
+          logo: 'https://ars.els-cdn.com/content/image/X20952635.jpg',
+          description:' Frontiers of Architectural Research is an international journal that publishes original research papers, review articles, and case studies to promote rapid communication and exchange among scholars, architects, and engineers. This journal introduces and reviews significant and pioneering achievements in the field of architecture research. Subject areas include the primary branches of architecture, such as architectural design and theory, architectural science and technology, urban planning, landscaping architecture, existing building renovation, and architectural heritage conservation. The journal encourages studies based on a rigorous scientific approach and state-of-the-art technology. All published papers reflect original research works and basic theories, models, computing, and design in architecture. High-quality papers addressing the social aspects of architecture are also welcome. This journal is strictly peer-reviewed and accepts only original manuscripts submitted in English.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'Scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: 'APC',
+          noapc: '',
+          format: 'IMRaD',
+          words: 'No. of words: not-described',
+          link: 'https://www.keaipublishing.com/en/journals/frontiers-of-architectural-research/guide-for-authors/',
+        },
+        {
+          short: 'Heritage - MDPI',
+          title: 'Heritage - MDPI',
+          front: 'https://www.mdpi.com/img/journals/heritage-logo.png?cf21375ce164c20f',
+          logo: 'https://www.mdpi.com/img/journals/heritage-logo.png?cf21375ce164c20f',
+          description:'Heritage (ISSN 2571-9408) is an international, peer-reviewed, open access journal of cultural and natural heritage science published quarterly by MDPI. The publication focuses on knowledge, conservation and management of cultural and natural heritage by sensing technologies, novel methods, best practices and policies.With the inclusion of Articles, Reviews, Perspectives and Communications, Heritage offers an appropriate format for any length or type of submission. The journal will be organized in six subsections as: Sensing technologies for diagnostics and monitoring of architectural and artistic heritage, Innovative solutions and best practices for protection of natural heritage, Innovation and Research in the field of Conservation and Recovery of archaeological and architectural heritage, Geoscience and earth observation technologies for Heritage risk assessment and mitigation and the study of human past, ICT for CH management and Fruition and Policies and human science contributions for increasing the cultural and economic role of CH in the society.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'Scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: 'APC',
+          noapc: '',
+          format: 'IMRaD',
+          words: 'No. of words: not-described',
+          link: 'https://www.mdpi.com/journal/heritage/instructions',
+        },
+        {
+          short: 'ICONARP',
+          title: 'ICONARP INTERNATIONAL JOURNAL OF ARCHITECTURE AND PLANNING',
+          front: 'https://iconarp.ktun.edu.tr/public/journals/1/cover_issue_24_en_US.jpg',
+          logo: 'data:image/jpeg;base64,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',
+          description:'Architecture, Planning and Design are strongly affected by other disciplines such as fine arts, philosophy, engineering, geography, economics, politics, sociology, history, psychology, geology, information technology, ecology, law, security and management. However, there are not enough academic journals which specifically focus on the connections of architecture, planning and design with other fields of science. ICONARP aims to fill that gap. Our scope is to provide a suitable space for theoretical, methodological and empirical papers in architectural, urban and real estate studies.',
+          index: 'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus: '',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'IMRaD/IMRaC',
+          words: '6,000-8,000 words',
+          link: 'https://iconarp.ktun.edu.tr/index.php/iconarp/about/submissions',
+        },
+        {
+          short: 'IJAC - SAGE',
+          title: 'International Journal of Architectural Computing',
+          front: 'https://journals.sagepub.com/na101/home/literatum/publisher/sage/journals/content/jaca/2021/jaca_19_4/jaca_19_4/20211207/jaca_19_4.cover.png',
+          logo: 'https://acadia-assets.s3.amazonaws.com/news_item/main_image/2CVPN2/layout_IJAC-Logo-Black.png',
+          description:'IJAC is a peer-reviewed journal featuring high-quality, original research papers (including state-of-the-art reviews), brief papers, and letters in all theoretical and technological areas that make up the field of Architectural Computing. Certain issues will have contemporary themes.',
+          index:'Web of Science- Clarivate',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'Sage',
+          scopuslogo: 'data:image/jpeg;base64,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',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'free-format',
+          words: 'No. of words: not-described',
+          link: 'https://journals.sagepub.com/author-instructions/JAC',
+        },
+        {
+          short: 'International Journal of Architectural Heritage',
+          title: 'International Journal of Architectural Heritage - T&FG',
+          front: 'https://www.tandfonline.com/doi/cover-img/10.1080/uarc20.v005.i01',
+          logo: 'https://www.tandfonline.com/doi/cover-img/10.1080/uarc20.v005.i01',
+          description:' International Journal of Architectural Heritage  provides a multidisciplinary scientific overview of existing resources and modern technologies useful for the study and repair of historical buildings and other structures. The journal will include information on history, methodology, materials, survey, inspection, non-destructive testing, analysis, diagnosis, remedial measures, and strengthening techniques.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'IMRaD',
+          words: 'No. of words: not-described',
+          link: 'https://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=uarc20',
+        },
+        {
+          short: 'Journal of architecture and Urbanism',
+          title: 'Journal of architecture and Urbanism - T&FG',
+          front: 'https://www.tandfonline.com/doi/cover-img/10.1080/ttpa19',
+          logo: 'https://www.tandfonline.com/doi/cover-img/10.1080/ttpa19',
+          description:'The Journal of Architecture and Urbanism is a peer-review academic journal which publishes original research papers. Through publication of new research results we provide a forum for discussion and debate on various areas of architecture and urbanism. Topics covered include: urban design and planning; sustainable development of regional structures; history and theory of architecture and urban planning; history and theory of landscape architecture; protection of architecture and urban heritage; technologies of architecture and urban design; architectural education.',
+          index: 'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'IMRaD/IMRaC',
+          words: '4,000-5,000 words',
+          link: 'https://journals.vgtu.lt/index.php/JAU/guidelinesforauthors',
+        },
+        {
+          short: 'Journal of architecture conservation',
+          title: 'Journal of architecture conservation - T&FG',
+          front: 'https://www.tandfonline.com/doi/cover-img/10.1080/raco20.v014.i01',
+          logo: 'https://www.tandfonline.com/doi/cover-img/10.1080/raco20.v014.i01',
+          description:'Journal of Architectural Conservation  also offers a valuable resource that includes information on building types; building materials and their conservation; recent case studies; developments in specific construction techniques; and research results from key investigations.',
+          index: 'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: 'APC',
+          noapc: '',
+          format: 'IMRaD/IMRaC',
+          words: 'Max. 5,500 words',
+          link: 'https://www.tandfonline.com/action/authorSubmission?show=instructions&journalCode=raco20',
+        },
+        {
+          short: 'JCHMSD - Emerald',
+          title: 'Journal of Cultural Heritage Management and Sustainable Development',
+          front: 'https://www.emerald.com/insight/proxy/containerImg?link=/resource/publication/journal/7d4f9f5be9fc663e8b54ee6708b2ea3d/urn:emeraldgroup.com:asset:id:binary:jchmsd.cover.jpg',
+          logo: 'https://www.emerald.com/insight/proxy/containerImg?link=/resource/publication/journal/7d4f9f5be9fc663e8b54ee6708b2ea3d/urn:emeraldgroup.com:asset:id:binary:jchmsd.cover.jpg',
+          description:' JCHMSD publishes a range of theoretical and practical papers based upon quantitative and qualitative methodological approaches. Articles are particularly welcome on immovable cultural heritage and its role in sustainable development, as well as the sustainable development of immovable cultural heritage. Immovable cultural heritage ranges from cultural landscapes to monuments. Other relevant dimensions of cultural heritage will also be considered for publication e.g. rural cultural heritage, indigenous cultural heritage management.',
+          index: 'Emerald',
+          indexlogo: 'data:image/jpeg;base64,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',
+          scopus:'',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'IMRaD',
+          words: '4,000 - 8,000 words',
+          link: 'https://www.emeraldgrouppublishing.com/journal/jchmsd?distinct_id=17efa29e3a928-0b777cdd10e90e-6e23724e-100200-17efa29e3aa30c&_ga=2.233193117.2016625083.1644874556-365364626.1644874555#author-guidelines',
+        },
+        {
+          short: 'Megaron',
+          title: 'Megaron journal',
+          front: 'https://megaronjournal.com/images/kapak.jpg',
+          logo: 'https://megaronjournal.com/images/megaron-logo.png',
+          description:'As a scientific, peer-reviewed journal, Megaron / Yıldız Technical University Faculty of Architecture E-Journal publishes national and international academic and original researches in architecture and planning that offer a certain contribution to related literature with definite methods and proved results. Articles, which can induce scientific discussions under current areas of interest of the field, are expected. However, data analysis, research summaries, technical reports, survey results, statistical works, compilation and articles produced from master’s thesis are not included in the scope. Megaron is published quarterly as web based, open access e-journal with E-ISSN: 1309-6915.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'IMRaC',
+          words: 'Max. 6,000 Words',
+          link: 'https://megaronjournal.com/Default.aspx?p=Information-for-Authors',
+        },
+
+        {
+          short: 'VITRUVIO - Polipapers',
+          title: 'VITRUVIO: INTERNATIONAL JOURNAL OF ARCHITECTURAL TECHNOLOGY AND SUSTAINABILITY',
+          front: 'https://polipapers.upv.es/public/journals/31/cover_issue_1126_en_US.png',
+          logo: 'https://polipapers.upv.es/public/journals/31/journalThumbnail_es_ES.png',
+          description:'VITRUVIO Journal is an international research journal publishing articles with links to architectural technology and sustainability. The aim is to present original technical advances as well as innovative methods and applications in order to contribute to the sustainable development through the architecture.Topics covered by the journal:Design and Technique, Digital Cultural Heritage, Spatial Analysis, Regeneration, Energy Focus and Historic Buildings and Structures.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'Scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'free-format',
+          words: '40.000 characters including spaces',
+          link: 'https://polipapers.upv.es/index.php/vitruvio/about/submissions#onlineSubmissions',
+        },
+
+        {
+          short: 'VLC - Polipapers',
+          title: 'VLC',
+          front: 'https://polipapers.upv.es/public/journals/24/cover_issue_1107_en_US.png',
+          logo: 'https://polipapers.upv.es/public/journals/24/journalThumbnail_es_ES.png',
+          description:'VLC arquitectura is an international research journal, covering architecture with an interdisciplinary approach. It is meant to be a forum for discussion on the architectural and urban project, ranging from its technical, energetic and material dimensions, to its theoretical, historical and graphic perspective. Research on architectural education is also welcome.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'Scopus',
+          scopuslogo: 'https://www.monash.edu/__data/assets/image/0004/2012458/scopus-image.jpg',
+          apc: '',
+          noapc: 'No-APC',
+          format: 'Format: not-described',
+          words: '4000-5000 words',
+          link: 'https://polipapers.upv.es/index.php/VLC/about/submissions#onlineSubmissions',
+        },
+        {
+          short: 'The Journal of Architecture',
+          title: 'The Journal of Architecture - T&FG',
+          front: 'https://www.tandfonline.com/doi/cover-img/10.1080/rjar20.v018.i03',
+          logo: 'https://www.tandfonline.com/doi/cover-img/10.1080/rjar20.v018.i03',
+          description:'The Journal of Architecture publishes texts in architectural humanities, architectural research, urbanism, technology and sustainability.',
+          index:'WoS - Clarivate Analitycs',
+          indexlogo: 'https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/25a50adeab99b00c02b040adb9c35c7c',
+          scopus:'',
+          apc: 'APC',
+          noapc: '',
+          format: 'IMRaC',
+          words: 'Max. 8,000 words',
+          link: 'https://www.tandfonline.com/action/authorSubmission?show=instructions&journalCode=rjar20',
+        },
+      ];
+      customElements.define(
+        'nav-home',
+        class NavHome extends HTMLElement {
+          connectedCallback() {
+            this.innerHTML = `
+          <ion-header translucent ion-color = 'dark'>
+            <ion-toolbar color="dark">
+              <ion-title class=" text-center">List of architectural journals</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen>
+            <ion-list class= "container">
+            ${techs
+              .map(
+                (tech) => `
+                <ion-item button onclick="showDetail('${tech.title}')">
+                <ion-avatar slot="start" >
+                  <ion-img src="${tech.logo}"></ion-img>
+                </ion-avatar>
+                  <ion-label>
+                    <h3>${tech.short}</h3>
+                  </ion-label>
+                </ion-item>
+            `
+              )
+              .join('\n')}
+            </ion-list>
+          </ion-content>
+          <!-- Fade Footer -->
+            <ion-footer collapse="fade" 
+                class= 'text-center py-0 my-0' mode='ios'>
+                <ion-toolbar color = 'dark' class= 'py-0 my-0'>
+                  <p> Designed by Cruz-Ramírez, L .C. Last update 14 Feb 2022.</p>
+              </ion-toolbar>
+            </ion-footer>
+        `;
+          }
+        }
+      );
+
+      const nav = document.querySelector('ion-nav');
+
+      function showDetail(title) {
+        const tech = techs.find((tech) => tech.title === title);
+        nav.push('nav-detail', { tech });
+      }
+
+      customElements.define(
+        'nav-detail',
+        class NavDetail extends HTMLElement {
+          connectedCallback() {
+            this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar color="dark">
+              <ion-buttons slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
+              </ion-buttons>
+              <ion-title>${this.tech.short}</ion-title>
+          </ion-header>
+          <ion-content fullscreen>
+            <div class="ion-padding container">
+            <h1>${this.tech.title}</h1>
+            <img src=${this.tech.front} width= '100px'></img>
+            <ion-item lines ='none'>
+              <ion-thumbnail slot="start">
+                <ion-img width= '50px' src=${this.tech.indexlogo}></ion-img>
+              </ion-thumbnail>
+               <p><strong>${this.tech.index} </strong></p>
+            </ion-item>
+            <ion-item lines ='none'>
+              <ion-thumbnail slot="start">
+                <ion-img width= '50px' src=${this.tech.scopuslogo} alt= ' '></ion-img>
+              </ion-thumbnail>
+               <p><strong>${this.tech.scopus} </strong></p>
+            </ion-item>
+           
+                <span class="badge bg-danger">${this.tech.apc}</span>
+                <span class="badge bg-success">${this.tech.noapc}</span>
+                <span class="badge bg-primary">${this.tech.format}</span>
+                <span class="badge bg-warning text-dark">${this.tech.words}</span>
+            <h3>Aims and scope</h3>
+            <p>${this.tech.description}</p>
+            <strong>URL: <strong>
+            <a href = ${this.tech.link}>${this.tech.link}<a>
+
+            </div>
+          </ion-content>
+        `;
+          }
+        }
+      );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>
